@@ -1,0 +1,13 @@
+version: "3.5"
+
+services:
+  issue_router:
+    image: issue_router
+    build:
+      context: .
+    environment:
+      GITHUB_URL: ${GITHUB_URL:-https://api.github.com/repos/NCATSTranslator/DataGaps/issues}
+      SCREENSHOT_URL: ${SCREENSHOT_URL:-https://api.github.com/repos/TranslatorSRI/IssueRouter/contents}
+      TOKEN: ${TOKEN}
+    ports:
+      - "4007:4007"
