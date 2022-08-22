@@ -8,7 +8,15 @@ from .models import CreateIssueRequest, CreateIssueResponse
 
 load_dotenv()
 
-app = FastAPI()
+app = FastAPI(
+    title='Translator Issue Router',
+    description='Post GitHub issues to Translator services.',
+    version='0.1.0',
+    contact={
+        'email': 'max@covar.com',
+        'name': 'Max',
+    },
+)
 
 
 def upload_screenshots(screenshots):
