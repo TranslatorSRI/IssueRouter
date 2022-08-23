@@ -11,7 +11,7 @@ load_dotenv()
 app = FastAPI(
     title='Translator Issue Router',
     description='Post GitHub issues to Translator services.',
-    version='0.1.0',
+    version='0.1.1',
     contact={
         'email': 'max@covar.com',
         'name': 'Max',
