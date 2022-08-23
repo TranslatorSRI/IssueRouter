@@ -82,7 +82,7 @@ async def create_issue(request: CreateIssueRequest):
         )
         response.raise_for_status()
         response_json = response.json()
-        url = response_json['url']
+        url = response_json['html_url']
     except Exception as e:
         raise HTTPException(status_code=422, detail=str(e))
 
