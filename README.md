@@ -3,12 +3,15 @@ Route issues from Translator UI to Translator Services
 
 ## How to:
 POST to `/create_issue` with the following values:
-- `url`: url where issue happened
+- `title`: one line description of what happened
+- `url`: NCATS UI url where the issue happened
+- `arax_url`: ARAX UI url for the ars pk
 - `ars_pk`: pk given from ARS
 - `description`: a short summary of the issue
 - `reproduction_steps`: a list of steps one could do to reproduce the issue
 - `screenshots`: a list of base64 encoded images that show the issue
 - `type`: bug or feature request
+- `submitter`: identification of the issue creator 
 
 You will get back a response containing the following values:
 - `url`: the github url of the created issue

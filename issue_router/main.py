@@ -11,7 +11,7 @@ load_dotenv()
 app = FastAPI(
     title='Translator Issue Router',
     description='Post GitHub issues to Translator services.',
-    version='0.1.1',
+    version='0.1.2',
     contact={
         'email': 'max@covar.com',
         'name': 'Max',
@@ -57,11 +57,16 @@ async def create_issue(request: CreateIssueRequest):
     try:
         screenshots = upload_screenshots(request.screenshots)
         data = {
-            'title': request.description,
+            'title': {request.title},
             'body': f"""
 ## Type: {request.type}
+## Submitter: {request.submitter}
 ## URL: {request.url}
+## ARAX URL: {request.arax_url}
 ## ARS PK: {request.ars_pk}
+
+## Description:
+{request.description}
 
 ## Steps to reproduce:
 {request.reproduction_steps}
