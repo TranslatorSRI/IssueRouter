@@ -6,7 +6,7 @@ class CreateIssueRequest(BaseModel):
     """Schema for a /create_issue request."""
     title: str
     url: str
-    submitter: str
+    submitter: Optional[str] = "Anonymous"
     arax_url: str
     ars_pk: str
     description: str
